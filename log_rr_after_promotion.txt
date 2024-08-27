@@ -1,11 +1,29 @@
-connecting to the database
+[ec2-user@ip-10-1-10-60 ~]$ mysql -h udacity-replica.c92hdhhg4dj5.us-west-2.rds.amazonaws.com -u admin -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 8.0.35 Source distribution
 
-mysql -h udacity-replica.c92hdhhg4dj5.us-west-2.rds.amazonaws.com -P 3306 -u admin -p
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-writing to the table
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-insert into phil_demo (name, age, gender) values ('mittens, 16, 'F');
+MySQL [(none)]> use udacity
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
 
-reading from the table
+Database changed
+MySQL [udacity]> insert into phil_demo ( name, age, gender) values ('mittens', 16, 'F');
+Query OK, 1 row affected (0.006 sec)
 
-select * from phil_demo;
+MySQL [udacity]> select * from phil_demo;
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| phil   |   43 | M      |
+| wendy  |   40 | F      |
+| lyla   |    5 | F      |
+| alex   |    1 | M      |
+| mittens|   16 | F      |
++--------+------+--------+
+5rows in set (0.001 sec)

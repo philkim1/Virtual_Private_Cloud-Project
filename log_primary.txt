@@ -1,21 +1,40 @@
-connecting to primary database
+[ec2-user@ip-10-1-10-60 ~]$ mysql -h udacity.cxwo48og6unr.us-east-1.rds.amazonaws.com -u admin -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 8.0.35 Source distribution
 
-mysql -h udacity.cvkewzj7kgst.us-east-1.rds.amazonaws.com -u admin -p
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-writing to primary database
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-create database udacity;
+MySQL [(none)]> create database udacity;
+Query OK, 1 row affected (0.023 sec)
 
-create table phil_demo (name text, age int, gender char);
+MySQL [(none)]> use udacity
+Database changed
+MySQL [udacity]> create table phil_demo (name text, age int, gender char);
+Query OK, 0 rows affected (0.059 sec)
 
-insert into phil_demo (name, age, gender) values ('phil', 43, 'M');
+MySQL [udacity]> insert into phil_demo ( name, age, gender) values ('phil', 43, 'M');
+Query OK, 1 row affected (0.010 sec)
 
-insert into phil_demo (name, age, gender) values ('wendy', 40, 'F');
+MySQL [udacity]> insert into phil_demo ( name, age, gender) values ('wendy', 40, 'F');
+Query OK, 1 row affected (0.006 sec)
 
-insert into phil_demo (name, age, gender) values ('lyla', 5, 'F');
+MySQL [udacity]> insert into phil_demo ( name, age, gender) values ('lyla', 5, 'F');
+Query OK, 1 row affected (0.007 sec)
 
-insert into phil_demo (name, age, gender) values ('alex', 1, 'M');
+MySQL [udacity]> insert into phil_demo ( name, age, gender) values ('alex', 1, 'M');
+Query OK, 1 row affected (0.006 sec)
 
-reading from table
-
-select * from phil_demo;
+MySQL [udacity]> select * from phil_demo;
++-------+------+--------+
+| name  | age  | gender |
++-------+------+--------+
+| phil  |   43 | M      |
+| wendy |   40 | F      |
+| lyla  |    5 | F      |
+| alex  |    1 | M      |
++-------+------+--------+
+4 rows in set (0.001 sec)
