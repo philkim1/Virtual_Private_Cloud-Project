@@ -1,0 +1,21 @@
+connecting to primary database
+
+mysql -h udacity.cvkewzj7kgst.us-east-1.rds.amazonaws.com -u admin -p
+
+writing to primary database
+
+create database udacity;
+
+create table phil_demo (name text, age int, gender char);
+
+insert into phil_demo (name, age, gender) values ('phil', 43, 'M');
+
+insert into phil_demo (name, age, gender) values ('wendy', 40, 'F');
+
+insert into phil_demo (name, age, gender) values ('lyla', 5, 'F');
+
+insert into phil_demo (name, age, gender) values ('alex', 1, 'M');
+
+reading from table
+
+select * from phil_demo;
