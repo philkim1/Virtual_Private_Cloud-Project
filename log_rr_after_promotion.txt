@@ -1,0 +1,11 @@
+connecting to the database
+
+mysql -h udacity-replica.c92hdhhg4dj5.us-west-2.rds.amazonaws.com -P 3306 -u admin -p
+
+writing to the table
+
+insert into phil_demo (name, age, gender) values ('mittens, 16, 'F');
+
+reading from the table
+
+select * from phil_demo;
