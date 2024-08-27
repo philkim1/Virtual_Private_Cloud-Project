@@ -1,0 +1,12 @@
+Recovery Time Objective (RTO)
+
+In the event there is an outage of services for a single AZ the minimum RTO would be approximately 1 hour
+from the time the problem occurs to remediation of the problem. Because the services are replicated in another region
+to serve as backup or redundancy, the minimum RTO for a single region outage would be 1 hour, the same as a single
+AZ outage.
+
+Recovery Point Objective (RPO)
+
+For the minimum RPO, 30 minutes would be needed to allow enough time to detect the problem, gather enough staff
+to address the problem and start the restoration process. Because we only have one AZ per region, the minimum RPO
+still be 30 minutes to detect the problem, address the problem and start to restore the system.
